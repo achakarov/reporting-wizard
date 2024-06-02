@@ -8,7 +8,7 @@ import {
 
 export const fetchReports = async (): Promise<Report[]> => {
   try {
-    const response = await fetch('https://demos.telerik.com/reporting');
+    const response = await fetch(BASE_URL);
     if (!response.ok) {
       throw new Error(
         `Network response was not ok: ${response.statusText} (Status Code: ${response.status})`
@@ -47,7 +47,6 @@ export const fetchReports = async (): Promise<Report[]> => {
         thumbnail: thumbnail,
       };
     });
-    console.log('reports:', reports);
     return reports;
   } catch (error) {
     console.error('Error fetching reports:', error);
