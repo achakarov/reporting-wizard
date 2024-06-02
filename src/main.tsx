@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 //       ref={(el: any) => (viewer = el)}
 //       serviceUrl="https://demos.telerik.com/reporting/api/reports/"
 //       reportSource={{
-//         report: 'ReportWithGroups.trdp',
+//         report: 'Report Catalog.trdp',
 //         parameters: {},
 //       }}
 //       viewerContainerStyle={{

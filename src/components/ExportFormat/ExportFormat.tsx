@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 import { fetchFormats } from '../../services/ReportsService';
 
+import { ReportFormat } from '../../models/Report';
+
 interface ExportFormatProps {
-  onSelectFormat: (format: string) => void;
+  onSelectFormat: (format: ReportFormat) => void;
 }
 
 export const ExportFormat: React.FC<ExportFormatProps> = ({
   onSelectFormat,
 }) => {
-  const [formats, setFormats] = useState<string[]>([]);
+  const [formats, setFormats] = useState<ReportFormat[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -24,8 +26,10 @@ export const ExportFormat: React.FC<ExportFormatProps> = ({
       {error && <p>{error}</p>}
       <ul>
         {formats.map((format) => (
-          <li key={format}>
-            <button onClick={() => onSelectFormat(format)}>{format}</button>
+          <li key={format.name}>
+            <button onClick={() => onSelectFormat(format)}>
+              {format.localizedName}
+            </button>
           </li>
         ))}
       </ul>
