@@ -41,6 +41,7 @@ const App: React.FC = () => {
     if (step > 1) {
       setStep(step - 1);
     }
+    if (step === 3) setSelectedFormat(null);
   };
   const goNext = () => {
     if (step < 3) {
@@ -51,7 +52,7 @@ const App: React.FC = () => {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>Report Viewer</h1>
+        <h1 className="sub-header">Report Viewer</h1>
       </header>
       <div className="navigation-buttons">
         {step > 1 && <button onClick={goBack}>Back</button>}

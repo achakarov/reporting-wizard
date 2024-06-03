@@ -22,7 +22,7 @@ export const ExportFormat: React.FC<ExportFormatProps> = ({
 
   return (
     <div className="export-format-container">
-      <h1>Select Export Format</h1>
+      <h1 className="sub-header">Select Export Format</h1>
       {error && <p>{error}</p>}
       <ul>
         {formats.map((format) => (

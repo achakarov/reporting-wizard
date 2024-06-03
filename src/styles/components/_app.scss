@@ -1,8 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  background-color: $background-color;
+}
+
 .app-container {
-  display: flex;
-  align-items: center;
+  @include flex-center;
   flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
   padding: 20px;
+  box-shadow: $box-shadow;
+  background-color: $background-color;
 }
 
 .app-header {
@@ -11,6 +21,7 @@
   text-align: center;
 
   h1 {
+    color: $primary-color;
     font-size: 2.5em;
   }
 }
@@ -28,6 +39,36 @@
 
 .content-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
+}
+
+.reports-container,
+.export-format-container,
+.result-container {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 20px;
+    color: $secondary-color;
+    font-size: 2em;
+  }
+
+  ul {
+    @include flex-center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 10px;
+
+      button {
+        @include button-style;
+        width: 200px;
+      }
+    }
+  }
 }
