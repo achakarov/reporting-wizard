@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# Telerik Reporting Wizard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application is a wizard-like UI that allows users to select a report from the Telerik Reporting REST Service, choose an export format, and then download the selected report in the chosen format. The application consists of three pages: Reports, Export Format, and Result.
 
-Currently, two official plugins are available:
+## Functional Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Reports:** This page displays a list of available reports that can be rendered by the Telerik Reporting REST Service. The list is fetched from [Telerik Demos](https://demos.telerik.com), excluding the "Web Report Designer" entry. The wizard allows advancing to the next page only when a single report is selected.
+- **Export Format:** This page lists all the export formats supported by the online REST Service. The wizard allows advancing to the next page even if no export format is selected.
+- **Result:** This page shows a "Download" button that connects to the REST Service, creates, and downloads the selected report in the requested export format. As a bonus, this page also previews the report in HTML format using the "HTML" rendering extension when requesting the report document from the REST Service.
 
-## Expanding the ESLint configuration
+## Running the Project
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project uses Vite for a build tool. To run the project, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Install the project dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open your web browser and navigate to [http://localhost:5137](http://localhost:5137).
