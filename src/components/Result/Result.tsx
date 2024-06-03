@@ -21,6 +21,7 @@ export const Result: React.FC<ResultProps> = ({
       <ReportViewer
         reportSource={ReportType[selectedReport]}
         reportParameters={{}}
+        selectedFormat={selectedFormat}
       />
     </div>
   );
