@@ -1,0 +1,19 @@
+@mixin button-style {
+  padding: 10px 20px;
+  border: none;
+  background: linear-gradient(to bottom, $primary-color, $secondary-color);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    background: $hover-color;
+  }
+
+  &:disabled {
+    background: $disabled-color;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}

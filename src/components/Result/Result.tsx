@@ -16,7 +16,7 @@ export const Result: React.FC<ResultProps> = ({
   selectedFormat,
 }) => {
   return (
-    <div>
+    <div className="result-container">
       <h1>Download Report</h1>
       <ReportViewer
         reportSource={ReportType[selectedReport]}

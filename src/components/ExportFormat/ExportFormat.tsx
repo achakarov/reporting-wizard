@@ -21,7 +21,7 @@ export const ExportFormat: React.FC<ExportFormatProps> = ({
   }, []);
 
   return (
-    <div>
+    <div className="export-format-container">
       <h1>Select Export Format</h1>
       {error && <p>{error}</p>}
       <ul>

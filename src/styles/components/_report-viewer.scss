@@ -1,0 +1,8 @@
+.report-viewer-container {
+  text-align: center;
+
+  button {
+    @include button-style;
+    margin-bottom: 10px;
+  }
+}

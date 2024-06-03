@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import './index.scss';
+
 import { Report, ReportFormat } from './models/Report';
 
 import ExportFormat from './components/ExportFormat';
@@ -47,8 +49,15 @@ const App: React.FC = () => {
   };
 
   return (
-    <>
-      <div style={{ padding: '20px' }}>
+    <div className="app-container">
+      <header className="app-header">
+        <h1>Report Viewer</h1>
+      </header>
+      <div className="navigation-buttons">
+        {step > 1 && <button onClick={goBack}>Back</button>}
+        {step < 3 && step > 1 && <button onClick={goNext}>Next</button>}
+      </div>
+      <div className="content-container">
         {step === 1 && (
           <Reports
             reports={reports}
@@ -56,32 +65,15 @@ const App: React.FC = () => {
             onSelectReport={handleSelectReport}
           />
         )}
-        {step === 2 && (
-          <>
-            <button onClick={goBack} style={{ marginBottom: '10px' }}>
-              Back
-            </button>
-            <button onClick={goNext} style={{ marginBottom: '10px' }}>
-              Next
-            </button>
-            <ExportFormat onSelectFormat={handleSelectFormat} />
-          </>
-        )}
-        {step === 3 && selectedReport && (
-          <>
-            <button onClick={goBack} style={{ marginBottom: '10px' }}>
-              Back
-            </button>
-            {selectedReport.name && (
-              <Result
-                selectedReport={selectedReport.name as keyof typeof ReportType}
-                selectedFormat={selectedFormat}
-              />
-            )}
-          </>
+        {step === 2 && <ExportFormat onSelectFormat={handleSelectFormat} />}
+        {step === 3 && selectedReport && selectedFormat && (
+          <Result
+            selectedReport={selectedReport.name as keyof typeof ReportType}
+            selectedFormat={selectedFormat}
+          />
         )}
       </div>
-    </>
+    </div>
   );
 };
 

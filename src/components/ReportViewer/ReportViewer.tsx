@@ -22,11 +22,11 @@ export const ReportViewer: React.FC<TelerikReportViewerProps> = ({
   };
 
   return (
-    <>
+    <div className="report-viewer-container">
       <button onClick={downloadReport} disabled={!selectedFormat}>
         Download
       </button>
-      <div>
+      <div className="telerik-report-viewer">
         <TelerikReportViewer
           ref={(el: any) => (viewer = el)}
           reportServer={{
@@ -52,6 +52,6 @@ export const ReportViewer: React.FC<TelerikReportViewerProps> = ({
           enableAccessibility={false}
         />
       </div>
-    </>
+    </div>
   );
 };

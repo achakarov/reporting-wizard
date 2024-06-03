@@ -14,7 +14,7 @@ export const Reports: React.FC<ReportsProps> = ({
   error,
 }) => {
   return (
-    <div>
+    <div className="reports-container">
       <h1>Select a Report</h1>
       {error && <p>{error}</p>}
       <ul>

@@ -13,7 +13,8 @@
     "@progress/telerik-react-report-viewer": "^22.24.514",
     "jquery": "^3.7.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.77.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
