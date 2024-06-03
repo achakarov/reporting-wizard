@@ -66,7 +66,7 @@ const App: React.FC = () => {
           />
         )}
         {step === 2 && <ExportFormat onSelectFormat={handleSelectFormat} />}
-        {step === 3 && selectedReport && selectedFormat && (
+        {step === 3 && selectedReport && (
           <Result
             selectedReport={selectedReport.name as keyof typeof ReportType}
             selectedFormat={selectedFormat}
