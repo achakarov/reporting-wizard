@@ -1,23 +1,18 @@
-import React, { useEffect, useState } from 'react';
-
-import { fetchReports } from '../../services/ReportsService';
+import React from 'react';
 
 import { Report } from '../../models/Report';
 
 interface ReportsProps {
   onSelectReport: (report: Report) => void;
+  reports: Report[];
+  error: string | null;
 }
 
-export const Reports: React.FC<ReportsProps> = ({ onSelectReport }) => {
-  const [reports, setReports] = useState<Report[]>([]);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetchReports()
-      .then((data) => setReports(data))
-      .catch((error) => setError(error.message));
-  }, []);
-
+export const Reports: React.FC<ReportsProps> = ({
+  onSelectReport,
+  reports,
+  error,
+}) => {
   return (
     <div>
       <h1>Select a Report</h1>
